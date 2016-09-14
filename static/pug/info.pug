@@ -1,0 +1,12 @@
+extends base.pug
+block content
+    h1 Справочная информация
+    - for (var i = 0; i < 8; i++)
+        div.ref
+            div.ref__text
+                p Трубы и фасонные изделия стальные с тепловой изоляцией из пенополиуретана в полиэтиленовой оболочке
+                div.ref__standart
+                    p ГОСТ 30732-2006
+            div.ref__link-wrap
+                a.ref__link.ref__link_pdf(href='#') Скачать в PDF 150kb
+                a.ref__link.ref__link_doc(href='#') Скачать в DOC 150kb

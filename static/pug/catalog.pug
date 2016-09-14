@@ -1,0 +1,13 @@
+extends base.pug
+block content
+    h1 Трубы и фасонные изделия в ОЦ
+    - for (var i = 0; i < 6; i++)
+        div.catalog-item.box
+            div.catalog-item__thumb
+                a(href='#')
+                    img(src='img/product-thumb1.png')
+            div.catalog-item__descr
+                a(href='#') Трубы в ППУ
+                p В настоящее время практически все трубопроводы в наружной и подземной сети центрального отопления устанавливаются трубы изолированные предварительно нанесенным пенополиуретаном
+            div.catalog-item__more
+                a(href='#') Подробнее

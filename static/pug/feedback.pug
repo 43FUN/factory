@@ -1,0 +1,47 @@
+extends base.pug
+block content
+    h1 Контакты
+    div.row
+        div.col-lg-5.map
+            h2 Карта проезда
+            div.map__wrap
+                img(src='img/map.png')
+            p
+                | ООО «Региональная Снабжающая Компания»
+                br
+                | 610000 г. Киров ул. Луганская 47а
+                br
+                | (8332) 227-230
+                br
+                | 227-230@rsk43.ru
+                br
+                a(href='#') Карточка организации
+            p
+                | ООО «Контакты второй компании»
+                br
+                | 610000 г. Киров ул. Луганская 47а
+                br
+                | (8332) 227-230
+                br
+                | 227-230@rsk43.ru
+                br
+                a(href='#') Карточка организации
+        div.col-lg-5.feedback
+            h2 Форма обратной связи
+            form.feedback__form
+                div.row
+                    div.col-lg-10
+                        input.feedback__text(type='text' placeholder='Как вас зовут?')
+                div.row
+                    div.col-lg-5
+                        input.feedback__text(type='email' placeholder='Ваш e-mail')
+                    div.col-lg-5
+                        input.feedback__text(type='text' placeholder='Ваш телефон')
+                div.row
+                    div.col-lg-10
+                        textarea(rows='6').feedback__text
+                div.row
+                    div.col-lg-10
+                        label.btn.btn_green.feedback__attach(for='id-attachment') Прикрепить файл
+                            input.feedback__attach-hide#id-attachment(type='file')
+                        input.btn.btn_blue.feedback__send(type='submit' value='Отправить')

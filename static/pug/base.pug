@@ -1,0 +1,69 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        title Трубы
+        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i')
+        link(rel='stylesheet' href='css/normalize.css')
+        link(rel='stylesheet' href='css/grid.css')
+        link(rel='stylesheet' href='css/fotorama.css')
+        link(rel='stylesheet' href='css/main.css')
+        script(src='js/jquery.min.js')
+        script(src='js/fotorama.js')
+        script(src='js/main.js')
+    body
+        div.container.wrap
+            div.row
+                div.col-lg-10
+                    header.header
+                        div.header__phone +7 (8332) 77 - 67 - 37
+                        div.header__mail info@e-mail.com
+                        div.header__logo.logo Завод современных теплосистем
+            div.row
+                div.col-lg-10
+                    nav.nav
+                        - var navLinks = ['Информация', 'Производство', 'Контроль качества', 'Калькулятор', 'Доставка', 'Контакты']
+                            ul.nav__list
+                                each  item in navLinks
+                                    li.nav__item
+                                        a.nav__link(href='#')= item
+            div.row
+                div.category
+                    - for (var i = 1; i < 6; i++)
+                        div.col-lg-2.category__item
+                            a.category__link(href='#')
+                                div.category__img-wrap
+                                    div.category__img-border
+                                    img.category__img(src='img/cat'+i+'.png')
+                                span.category__name Трубы и фасонные изделия в ОЦ
+            block content
+            footer.footer
+                div.row
+                    div.col-lg-5
+                        div.contacts
+                            div.contacts__header Контактная информация
+                            div.contacts__item
+                                span.contacts__item-name Телефон
+                                span.contacts__item-value +7 (8332) 77 - 67 - 37
+                            div.contacts__item
+                                span.contacts__item-name Адрес
+                                span.contacts__item-value г. Киров, ул. Луганская 47а
+                        div.copyright
+                            span.copyright__text © 2016 Завод современных технологий
+                            a.copyright__link(href='') Создано в «Web MEG»
+                    div.col-lg-5
+                        div.row
+                            div.col-lg-5.footer-nav
+                                span.footer-nav__header Продукция
+                                - var footerLinks = ['Трубы и фасонные изд в ОЦ', 'Трубы и фасонные изд в ПЭ', 'Скорлупа ППУ', 'Система ОДК 50', 'Комплектующие']
+                                ul.footer-nav__list
+                                    each  item in footerLinks
+                                        li.footer-nav__item
+                                            a.footer-nav__link(href='#')= item
+                            div.col-lg-5.footer-nav
+                                span.footer-nav__header Услуги
+                                - var footerLinks = ['Снятие фаски', 'Распил металла', 'Сварочные работы', 'Плазменная резка']
+                                ul.footer-nav__list
+                                    each  item in footerLinks
+                                        li.footer-nav__item
+                                            a.footer-nav__link(href='#')= item

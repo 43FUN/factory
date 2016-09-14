@@ -1,0 +1,121 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Завод Современных Теплосистем</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link rel="stylesheet" href="{% static "/css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "/css/grid.css" %}">
+    <link rel="stylesheet" href="{% static "/css/fotorama.css" %}">
+    <link rel="stylesheet" href="{% static "/css/main.css" %}">
+    <script src={% static "/js/jquery.min.js"%}></script>
+    <script src={% static "/js/fotorama.js"%}></script>
+    <script src={% static "/js/main.js"%}></script>
+</head>
+<body>
+<div class="container wrap">
+    <div class="row">
+        <div class="col-lg-10">
+          <header class="header">
+            <div class="header__phone">+7 (8332) 77 - 67 - 37</div>
+            <div class="header__mail">info@e-mail.com</div>
+            <div class="header__logo logo">Завод современных теплосистем</div>
+          </header>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-10">
+            <nav class="nav">
+                <ul class="nav__list">
+                  <li class="nav__item"><a class="nav__link" href="{% url 'info:info' %}">Информация</a></li>
+                  <li class="nav__item"><a class="nav__link" href="{% url 'production:production' %}">Производство</a></li>
+                  <li class="nav__item"><a class="nav__link" href="{% url 'control:control' %}">Контроль качества</a></li>
+                  <li class="nav__item"><a class="nav__link" href="{% url 'calculator:calculator' %}">Калькулятор</a></li>
+                  <li class="nav__item"><a class="nav__link" href="{% url 'delivery:delivery' %}">Доставка</a></li>
+                  <li class="nav__item"><a class="nav__link" href="{% url 'feedback:feedback' %}">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="category">
+          <div class="col-lg-2 category__item"><a class="category__link" href="{% url 'products:tubing_oc' %}">
+              <div class="category__img-wrap">
+                <div class="category__img-border"></div><img class="category__img" src={% static "img/cat1.png" %}>
+              </div><span class="category__name">Трубы и фасонные изделия в ОЦ</span></a></div>
+          <div class="col-lg-2 category__item"><a class="category__link" href="{% url 'products:tubing_pe' %}">
+              <div class="category__img-wrap">
+                <div class="category__img-border"></div><img class="category__img" src={% static "img/cat2.png" %}>
+              </div><span class="category__name">Трубы и фасонные изделия в ПЭ</span></a></div>
+          <div class="col-lg-2 category__item"><a class="category__link" href="{% url 'products:shell_ppu' %}">
+              <div class="category__img-wrap">
+                <div class="category__img-border"></div><img class="category__img" src={% static "img/cat3.png" %}>
+              </div><span class="category__name">Скорлупа ППУ</span></a></div>
+          <div class="col-lg-2 category__item"><a class="category__link" href="{% url 'products:system_odk' %}">
+              <div class="category__img-wrap">
+                <div class="category__img-border"></div><img class="category__img" src={% static "img/cat4.png" %}>
+              </div><span class="category__name">Система ОДК</span></a></div>
+          <div class="col-lg-2 category__item"><a class="category__link" href="{% url 'products:accessories' %}">
+              <div class="category__img-wrap">
+                <div class="category__img-border"></div><img class="category__img" src={% static "img/cat5.png" %}>
+              </div><span class="category__name">Комплектующие</span></a></div>
+        </div>
+    </div>
+
+{% block index %}{% endblock %}
+{% block feedback %}{% endblock %}
+{% block delivery %}{% endblock %}
+{% block info %}{% endblock %}
+{% block acessories %}{% endblock %}
+{% block shell_ppu %}{% endblock %}
+{% block system_odk %}{% endblock %}
+{% block tubing_oc %}{% endblock %}
+{% block tubing_pe %}{% endblock %}
+{% block calculator %}{% endblock %}
+{% block control %}{% endblock %}
+{% block production %}{% endblock %}
+{% block chamfering %}{% endblock %}
+{% block metallsawing %}{% endblock %}
+{% block plasmacutting %}{% endblock %}
+{% block welding %}{% endblock %}
+
+    <footer class="footer">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="contacts">
+              <div class="contacts__header">Контактная информация</div>
+              <div class="contacts__item"><span class="contacts__item-name">Телефон</span><span class="contacts__item-value">+7 (8332) 77 - 67 - 37</span></div>
+              <div class="contacts__item"><span class="contacts__item-name">Адрес</span><span class="contacts__item-value">г. Киров, ул. Луганская 47а</span></div>
+            </div>
+            <div class="copyright"><span class="copyright__text">© 2016 Завод современных технологий</span></div>
+          </div>
+          <div class="col-lg-5">
+            <div class="row">
+              <div class="col-lg-5 footer-nav"><span class="footer-nav__header">Продукция</span>
+                <ul class="footer-nav__list">
+                  <li class="footer-nav__item"><a class="footer-nav__link" href="{% url 'products:tubing_oc' %}">Трубы и фасонные изд в ОЦ</a></li>
+                  <li class="footer-nav__item"><a class="footer-nav__link" href="{% url 'products:tubing_pe' %}">Трубы и фасонные изд в ПЭ</a></li>
+                  <li class="footer-nav__item"><a class="footer-nav__link" href="{% url 'products:shell_ppu' %}">Скорлупа ППУ</a></li>
+                  <li class="footer-nav__item"><a class="footer-nav__link" href="{% url 'products:system_odk' %}">Система ОДК 50</a></li>
+                  <li class="footer-nav__item"><a class="footer-nav__link" href="{% url 'products:accessories' %}">Комплектующие</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-5 footer-nav"><span class="footer-nav__header">Услуги</span>
+                <ul class="footer-nav__list">
+                  <li class="footer-nav__item"><a class="footer-nav__link" href="{% url 'service:chamfering' %}">Снятие фаски</a></li>
+                  <li class="footer-nav__item"><a class="footer-nav__link" href="{% url 'service:metallsawing' %}">Распил металла</a></li>
+                  <li class="footer-nav__item"><a class="footer-nav__link" href="{% url 'service:welding' %}">Сварочные работы</a></li>
+                  <li class="footer-nav__item"><a class="footer-nav__link" href="{% url 'service:plasmacutting' %}">Плазменная резка</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+</div>
+  </body>
+</html>
+</body>
+</html>

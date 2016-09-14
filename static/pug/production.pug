@@ -1,0 +1,7 @@
+extends base.pug
+block content
+    h1 Производство
+    div.fotorama.production-slider
+        - for (var i = 0; i < 7; i++)
+            a(href='img/slide'+i+'.jpg')
+                img(src='img/slide'+i+'.jpg')
