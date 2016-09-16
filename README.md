@@ -16,4 +16,4 @@
  
 запускаем проект
  
-    python3 manage.py runsever
+    python3 manage.py runserver
