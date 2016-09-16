@@ -13,19 +13,23 @@ class FeedbackForm(ModelForm):
         super(FeedbackForm, self).__init__(*args, **kwargs)
         self.fields['name'].widget = forms.TextInput(attrs={
             'class': 'feedback__text',
+            'maxlength': "50",
             'placeholder': 'Введите Ваше имя'})
         self.fields['email'].widget = forms.TextInput(attrs={
             'class': 'feedback__text',
+            'maxlength': "30",
             'placeholder': 'Ваш email'})
         self.fields['phone'].widget = forms.TextInput(attrs={
             'class': 'feedback__text',
+            'maxlength': "30",
             'placeholder': 'Ваш телефон'})
         self.fields['text'].widget = forms.Textarea(attrs={
             'class': 'feedback__text',
+            'maxlength': "500",
             'rows': '6'})
+        self.fields['file'].required = False
         self.fields['file'].widget = forms.FileInput(attrs={
             'class': 'btn btn_green feedback__attach'})
-        self.fields['file'].required = False
 
 
 

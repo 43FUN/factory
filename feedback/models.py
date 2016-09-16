@@ -15,6 +15,6 @@ class Feedback(models.Model):
     text = models.TextField(max_length=500)
     file = models.FileField(
         upload_to="files", verbose_name='Файл')
-    date = models.DateTimeField('Дата',
-        default=datetime.datetime.now)
+    date = models.DateTimeField(
+        'Дата', default=datetime.datetime.now)
 

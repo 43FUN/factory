@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
 from feedback.form import FeedbackForm
-from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 
 # Create your views here.

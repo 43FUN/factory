@@ -13,4 +13,4 @@ class FeedbackAdmin(admin.ModelAdmin):
         'date',
     ]
     list_filter = ['date']
-    list_display = ['name', 'email', 'date' ]
+    list_display = ['name', 'email', 'date', 'text']
