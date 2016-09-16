@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^feedback/', include(
@@ -31,6 +32,6 @@ urlpatterns = [
     url(r'^production/', include(
         'production.urls', namespace='production')),
     url(r'^service/', include('service.urls', namespace='service')),
-    url(r'^$', include('index.urls', namespace='index')),
+    url(r'^', include('index.urls', namespace='index')),
 
 ]

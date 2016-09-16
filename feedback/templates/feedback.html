@@ -11,34 +11,34 @@
         </div>
         <div class="col-lg-5 feedback">
           <h2>Форма обратной связи</h2>
-          <form class="feedback__form">
+          <form action="{% url 'feedback:feedback' %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
             <div class="row">
               <div class="col-lg-10">
-                <input class="feedback__text" type="text" placeholder="Как вас зовут?">
+                {{ form.name }}
               </div>
             </div>
             <div class="row">
               <div class="col-lg-5">
-                <input class="feedback__text" type="email" placeholder="Ваш e-mail">
+                {{ form.email }}
               </div>
               <div class="col-lg-5">
-                <input class="feedback__text" type="text" placeholder="Ваш телефон">
+                {{ form.phone }}
               </div>
             </div>
             <div class="row">
               <div class="col-lg-10">
-                <textarea class="feedback__text" rows="6"></textarea>
+                {{ form.text }}
               </div>
             </div>
             <div class="row">
               <div class="col-lg-10">
-                <label class="btn btn_green feedback__attach" for="id-attachment">Прикрепить файл
-                  <input class="feedback__attach-hide" id="id-attachment" type="file">
-                </label>
+               {{ form.file }}
                 <input class="btn btn_blue feedback__send" type="submit" value="Отправить">
               </div>
             </div>
           </form>
         </div>
     </div>
+
 {% endblock %}

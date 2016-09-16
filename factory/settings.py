@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'control',
     'products',
     'production',
-    'service'
+    'service',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'factory.urls'
 
@@ -139,3 +140,17 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     '/home/peppa/project/factory/static/',
 ]
+
+
+MEDIA_ROOT = os.path.join('media')
+
+MEDIA_URL = '/media/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'cool.wfe2017@yandex.ru'
+EMAIL_CODEPAGE = 'utf-8'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST_USER = 're.wew2016'
+EMAIL_HOST_PASSWORD = 'Pelengator43'
+EMAIL_PORT = 587
