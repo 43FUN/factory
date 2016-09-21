@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from production.models import Gallery
 
-# Create your views here.
-
 
 def production(request):
     title = 'Производство'

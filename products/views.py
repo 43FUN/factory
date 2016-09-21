@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from products.models import Products, Category
 
-# Create your views here.
-
 
 def categories(request, category_id=1):
     category = Category.objects.get(id=category_id)

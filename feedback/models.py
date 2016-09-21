@@ -3,8 +3,6 @@
 from django.db import models
 import datetime
 
-# Create your models here.
-
 
 class Feedback(models.Model):
     class Meta():
@@ -16,7 +14,7 @@ class Feedback(models.Model):
     phone = models.CharField('Телефон', max_length=30)
     text = models.TextField(max_length=500)
     file = models.FileField(
-        upload_to="files", verbose_name='Файл')
+        upload_to="files", verbose_name='Файл', blank=True)
     date = models.DateTimeField(
         'Дата', default=datetime.datetime.now)
 

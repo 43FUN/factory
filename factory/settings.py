@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import os.path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -62,9 +63,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            '/home/peppa/project/factory/templates',
-            '/home/peppa/project/factory/products/templates/',
-            '/home/peppa/project/factory/production/templates/',
+            os.path.join(os.path.dirname(os.path.dirname(__file__)),'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -132,7 +131,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/home/peppa/project/factory/static/',
 ]
 
 
@@ -145,6 +143,6 @@ DEFAULT_FROM_EMAIL = 'cool.wfe2017@yandex.ru'
 EMAIL_CODEPAGE = 'utf-8'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_HOST_USER = 're.wew2016'
-EMAIL_HOST_PASSWORD = 'Pelengator43'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587

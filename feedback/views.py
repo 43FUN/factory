@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
+from django.template.loader import render_to_string
 from feedback.form import FeedbackForm
 from django.core.mail import EmailMultiAlternatives
-
-# Create your views here.
 
 
 def feedback(request):
@@ -20,18 +19,13 @@ def feedback(request):
             text = feedback.text
             file = feedback.file or None
             date = feedback.date
-            subject, from_email, to = 'Оставлен отзыв на сайте',\
-                                      're.wew2016@yandex.ru',\
-                                      'stream-92@mail.ru'
-            text_content = '.None'
-            html_content = '<p>Имя: {}</p> <p>Email: {}</p>' \
-                           ' <p>Телефон: {}</p> <p>Текст сообщения:'\
-                           ' {}</p> Дата: {}'.format(
-                                                    name,
-                                                    email,
-                                                    phone,
-                                                    text,
-                                                    date)
+            subject, from_email, to = ('Оставлен отзыв на сайте',
+                                       're.wew2016@yandex.ru',
+                                       'stream-92@mail.ru')
+            data = {'name': name, 'email': email, 'phone': phone,
+                    'text': text, 'date': date}
+            text_content = render_to_string('email_text.html', data)
+            html_content = render_to_string('email_html.html', data)
             msg = EmailMultiAlternatives(subject, text_content,
                                          from_email, [to])
             msg.attach_alternative(html_content, "text/html")
