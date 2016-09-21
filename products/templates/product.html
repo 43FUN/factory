@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% block seotitle %}
+{% if product.seotitle %}
+    <title>{{ product.seotitle }}</title>
+{% else %}
+    <title>{{ product.name }}</title>
+{% endif %}
+{% endblock %}
+
+{%  block seodescription %}
+{% if product.seodescription %}
+    <meta name="description" content="{{ product.seodescription }}">
+{% else %}
+    <meta name="description" content="{{ product.name }}">
+{% endif %}
+{% endblock %}
+
+{% block product %}
+ <h1>{{ product.title }}</h1>
+      <div class="product box">
+        <div class="product__l-col">
+            {% if product.file %}
+            <img src="/media/{{ product.file }}">
+            {% endif %}
+          <p>{{ product.text }}</p>
+        </div>
+        <div class="product__r-col">
+          <div class="product-menu">
+            </ul><a class="btn btn_sea product-menu__send" href="{% url 'feedback:feedback' %}">Отправить заявку</a>
+          </div>
+        </div>
+      </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+
+{% block seotitle %}
+{% if category.seotitle %}
+    <title>{{ category.seotitle }}</title>
+{% else %}
+    <title>{{ category.name }}</title>
+{% endif %}
+{% endblock %}
+
+{%  block seodescription %}
+{% if category.seodescription %}
+    <meta name="description" content="{{ category.seodescription }}">
+{% else %}
+    <meta name="description" content="{{ category.name }}">
+{% endif %}
+{% endblock %}
+
+{% block categories %}
+ <h1>{{ category.name }}</h1>
+      <div class="product box">
+        <div class="product__l-col">
+          <p>{{ category.name }}</p>
+        </div>
+        <div class="product__r-col">
+          <div class="product-menu">
+            <ul class="product-menu__list">
+              <li><a href="#">ГОСТ 30732-2006</a></li>
+              <li><a href="#">СНиП 41-03-2003</a></li>
+            </ul>
+          </div>
+          <div class="product-menu">
+            <div class="product-menu__header">Продукция</div>
+            <ul class="product-menu__list">
+                {% for products in products %}
+              <li><a href="{% url 'products:product' products_id=products.id %}">{{ products.name }}</a></li>
+                {% endfor %}
+            </ul><a class="btn btn_sea product-menu__send" href="{% url 'feedback:feedback' %}">Отправить заявку</a>
+          </div>
+        </div>
+      </div>
+{% endblock %}

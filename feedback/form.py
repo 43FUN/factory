@@ -28,8 +28,6 @@ class FeedbackForm(ModelForm):
             'maxlength': "500",
             'rows': '6'})
         self.fields['file'].required = False
-        self.fields['file'].widget = forms.FileInput(attrs={
-            'class': 'btn btn_green feedback__attach'})
 
 
 

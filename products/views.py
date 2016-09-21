@@ -1,23 +1,16 @@
 from django.shortcuts import render
+from products.models import Products, Category
 
 # Create your views here.
 
 
-def accessories(request):
-    return render(request, 'accessories.html')
+def categories(request, category_id=1):
+    category = Category.objects.get(id=category_id)
+    products = Products.objects.filter(category_id=category_id)
+    return render(request, 'categories.html',
+                  {'products': products, 'category': category})
 
 
-def shell_ppu(request):
-    return render(request, 'shell_ppu.html')
-
-
-def system_odk(request):
-    return render(request, 'system_odk.html')
-
-
-def tubing_oc(request):
-    return render(request, 'tubing_oc.html')
-
-
-def tubing_pe(request):
-    return render(request, 'tubing_pe.html')
+def product(request, products_id=1):
+    product = Products.objects.get(id=products_id)
+    return render(request, 'product.html', {'product': product})

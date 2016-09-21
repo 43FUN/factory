@@ -1,15 +1,16 @@
 {% extends 'main.html' %}
 {% load staticfiles %}
 
-{% block production %}
+{% block seotitle %}
+    <title>Производство</title>
+{% endblock %}
 
+{% block production %}
 <h1>Производство</h1>
 <div class="fotorama production-slider">
     {% for file in gallery %}
     <img src="/media/{{ file.file }}"></a>
     {% endfor %}
 </div>
-
-
     {{ gallery.file.path }}
 {% endblock %}

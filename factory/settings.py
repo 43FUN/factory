@@ -37,15 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'index',
-    'delivery',
     'feedback',
-    'info',
-    'calculator',
-    'control',
     'products',
     'production',
-    'service',
+    'django.contrib.sites',
+    'django.contrib.flatpages'
 ]
 
 MIDDLEWARE = [
@@ -56,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
 ]
 
 
@@ -66,10 +63,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             '/home/peppa/project/factory/templates',
-            '/home/peppa/project/factory/index/templates',
-            '/home/peppa/project/factory/delivery/templates/',
-            '/home/peppa/project/factory/feedback/templates/',
-            '/home/peppa/project/factory/info/templates/',
+            '/home/peppa/project/factory/products/templates/',
             '/home/peppa/project/factory/production/templates/',
         ],
         'APP_DIRS': True,

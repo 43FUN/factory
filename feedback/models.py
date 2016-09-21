@@ -8,6 +8,8 @@ import datetime
 
 class Feedback(models.Model):
     class Meta():
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
         db_table = 'feedback'
     name = models.CharField('Имя', max_length=50)
     email = models.EmailField('Email')

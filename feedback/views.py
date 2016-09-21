@@ -9,6 +9,7 @@ from django.core.mail import EmailMultiAlternatives
 def feedback(request):
     form = FeedbackForm(request.POST or None, request.FILES or None)
     args = {}
+    args['title'] = 'Контакты'
     args['form'] = form
     if request.method == 'POST':
         if form.is_valid():
